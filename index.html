@@ -57,14 +57,32 @@
 
     </style>
 </head>
-<body>
+<body onload="mainScript();">
     <div id="wrap">
       <div class="container">
         <div class="page-header">
           <h1>Unblockr</h1>
         </div>
       </div>
+      <div class="span6 well offset3">
+	<p id="demo">debug</p>
+	<a href="#" onclick="mainScript();" class="btn btn-primary">Hit me again!</a>
+      </div>
+<script type="text/javascript">
+function mainScript(){
+        var mood = Math.floor(Math.random() * 6);
+        var character = Math.floor(Math.random() * 6);
+        var setting = Math.floor(Math.random() * 6);
+        var goal = Math.floor(Math.random() * 6);
 
+        var moods = new Array("bittersweet","gloomy","intimate", "warm", "tense", "dreamy");
+        var characters = new Array("pirate","salesman","nurse", "teacher", "adventurer", "prisoner");
+        var settings = new Array("space","the 1920's","the wild west", "a hackathon", "an old french village", "the future");
+        var goals = new Array("start a business","save their lover","avenge their father", "explore", "find the meaning of life", "write a short story");
+
+        document.getElementById("demo").innerHTML="<p>Write a <em>" + moods[mood] + "</em> short story about a <em>" + characters[character] + "</em> in <em>" + settings[setting] + "</em> who wants to <em>" + goals[goal] + "</em>.</p>";
+}
+</script>
       <div id="push"></div>
     </div>
     <div id="footer">
